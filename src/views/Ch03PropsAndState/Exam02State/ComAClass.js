@@ -19,6 +19,8 @@ class ComAClass extends React.Component {
            ...this.state,
            number:this.state.number+1
         
+    },()=>{
+      console.log(this.state.number)
     });
   }
 
@@ -28,7 +30,6 @@ class ComAClass extends React.Component {
         color:getRandomColor()
         })
   };
-
   render() {
     return (
       <div className="card">

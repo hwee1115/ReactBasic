@@ -23,9 +23,11 @@ function ComAFun(props) {
       color: getRandomColor()
     });
   };
+
+  console.log("렌더링");
     return (
       <div className="card">
-        <div className="card-header">Home</div>
+        <div className="card-header">ComAFun</div>
         <div className="card-body">
             <h3 style ={{color:state.color}}>{state.number}</h3>
             <button className="btn btn-info btn-sm mr-2" onClick={addNumber}>숫자 증가</button>
