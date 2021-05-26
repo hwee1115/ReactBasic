@@ -24,7 +24,7 @@ function BoardWriteForm(props) {
     }
 
     const handleCancel = () =>{
-        props.history.goBck();
+        props.history.goBack();
     }
 
     return (

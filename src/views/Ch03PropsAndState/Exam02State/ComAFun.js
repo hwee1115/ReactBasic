@@ -17,7 +17,7 @@ function ComAFun(props) {
     });
   };
 
-  const changeColor = (evnet) =>{
+  const changeColor = (event) =>{
     setState({
       number:state.number,
       color: getRandomColor()
