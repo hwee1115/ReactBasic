@@ -52,6 +52,7 @@ class LoginFormClass extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
+  console.log("mapStateToProps 실행")
   return {
     uid: state.authReducer.uid,
     authToken: state.authReducer.authToken,
@@ -59,6 +60,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapdDispatchToProps = (dispatch) => {
+  console.log("mapdDispatchToProps 실행")
   return {
     setUid: (uid) => dispatch(createSetUidAction(uid)),
     setAuthToken: (authToken) => dispatch(createSetAuthToken(authToken)),

@@ -1,8 +1,9 @@
+import { removeAuthHeader } from "apis/axiosConfig";
 import AppContext from "AppContext";
 import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {Link} from "react-router-dom";
-import { createSetUidAction } from "redux/auth-reducer";
+import { createSetAuthToken, createSetUidAction } from "redux/auth-reducer";
 
 function AppHeader() {
   const appContext = useContext(AppContext);
@@ -12,6 +13,12 @@ function AppHeader() {
   const logout = (event) =>{
     appContext.setUid("");
     dispatch(createSetUidAction(""));
+    dispatch(createSetAuthToken(""));
+    removeAuthHeader();
+
+    sessionStorage.removeItem("uid");
+    sessionStorage.removeItem("authToken");
+
   }
   return (
     <nav className="navbar bg-dark navbar-dark text-white font-weight-bold 
@@ -22,7 +29,7 @@ function AppHeader() {
       </Link>
       <div>
         {appContext.uid === "" &&  globlUid ===""?
-          <Link to="/ch08/exam02" className="btn btn-success btn-sm">로그인</Link>
+          <Link to="/ch09/exam02" className="btn btn-success btn-sm">로그인</Link>
           :
           <div className="d-flex align-items-center">
             <span className="mr-2">User ID : {appContext.uid || globlUid}</span>

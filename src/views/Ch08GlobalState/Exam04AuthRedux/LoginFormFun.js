@@ -10,7 +10,8 @@ function LoginFormFun(props) {
     const dispatch = useDispatch();
 
     const login = (event)=>{
-        dispatch(createSetUidAction(uid))
+        dispatch(createSetUidAction(uid));
+        // dispatch({type:"auth/setUid",uid})
     };
 
     const logout = (event) => {
